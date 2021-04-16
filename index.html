@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="stylesheet" href="./MyStyle.css">
+	<meta charset="UTF-8">
+	<meta name="description" content="Arvids egna hemsida">
+	<meta name="keywords" content="Arvid">
+	<meta name="author" content="Arvid Gruvö Wärle">
+
+
+	<title>
+		Räkna ut bitrate
+	</title>
+</head>
+
+<body>
+	<br>
+	<div class="MainBox">
+
+	<style>
+		body {
+		   background: url('forestbridge.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+		}
+		</style>
+
+
+
+
+<label for="lengthMin">Längd (min):</label>
+<input type="number" id="lengthMin" name="lengthMin"><br><br>
+<label for="length">Längd (s):</label>
+<input type="number" id="lengthSec" name="lengthSec"><br><br>
+<label for="targetSize">Önskad storlek (mb):</label>
+<input type="number" id="targetSize" name="targetSize"><br><br>
+
+
+
+
+<br>
+
+	<button class="block" onclick="myFunction()">Räkna ut bitrate</button>
+
+
+	<h1 id="Number1">"Nummer"</h1>
+	
+
+	<script>
+		function myFunction() {
+			
+			var lengthMin = parseInt(document.getElementById("lengthMin").value);
+			var lengthSec = parseInt(document.getElementById("lengthSec").value);
+			if (lengthMin !== lengthMin) {
+     lengthMin = 0; 
+}
+		
+			var lengthTot = lengthMin*60 + lengthSec;
+			var targetSize = parseInt(document.getElementById("targetSize").value);
+			var bitrate = Math.floor(0.95*(((targetSize*1024)/lengthTot)*8));
+			//var bitrate = ((targetSize*1024)/length)*8;
+			
+			document.getElementById("Number1").innerHTML = bitrate;
+		}
+
+
+
+
+	</script>
+	</div>
+	</div>
+	</div>
+	</div>
+</div>
+</body>
+
+</html>
